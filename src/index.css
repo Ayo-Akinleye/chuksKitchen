@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Tell the linter to ignore this */
+/* stylelint-disable-next-line */
+@theme {
+    --font-sans: 'Inter', sans-serif;
+    --font-island: 'Island Moments', cursive;
+    --font-jost: 'Jost';
+}
