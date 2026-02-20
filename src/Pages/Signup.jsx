@@ -15,26 +15,28 @@ const Signup = () => {
     ]
 
     return (
-        <section className='h-full grid grid-cols-1 md:grid-cols-2'>
+        <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
             {/* Image Container */}
             <WelcomeImageDiv />
 
             {/* Sign up section */}
-            <div className="flex flex-col m-auto items-center justify-center">
-                <ChuksName />
-                <Form
-                    title="Create Your Account"
-                    fields={signupFields}
-                    extras={<p>I agree to the Terms & Conditions and Privacy Policy</p>}
-                    buttonText="Continue"
-                />
-                <p className="text-sm">Or Continue with</p>
-                <Button text="Continue with Google" className="" />
-                <Button text="Continue with Apple" />
-                <span className="flex gap-1 text-sm">
-                    <p>Already have an account?</p>
-                    <Link to="/signin" className="text-blue-400 cursor-pointer">Sign in</Link>
-                </span>
+            <div className="flex justify-center items-center">
+                <div className="flex flex-col w-95 p-2.5 mt-10 items-center justify-center gap-1">
+                    <ChuksName />
+                    <Form
+                        title="Create Your Account"
+                        fields={signupFields}
+                        extras={<p>I agree to the Terms & Conditions and Privacy Policy</p>}
+                        buttonText="Continue"
+                    />
+                    <p className="text-sm">Or Continue with</p>
+                    <Button text="Continue with Google" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm" />
+                    <Button text="Continue with Apple" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm" />
+                    <span className="flex gap-1 text-sm">
+                        <p>Already have an account?</p>
+                        <Link to="/signin" className="text-blue-400 cursor-pointer">Sign in</Link>
+                    </span>
+                </div>
             </div>
         </section>
     )

@@ -13,26 +13,29 @@ const Signin = () => {
     ]
 
     return (
-        <section className='h-full grid grid-cols-1 md:grid-cols-2'>
+        <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
             {/* Image Container */}
             <WelcomeImageDiv />
 
             {/* Sign in section */}
-            <div className="flex flex-col w-95 p-2.5 m-auto items-center justify-center gap-2">
-                <ChuksName />
-                <Form
-                    title="Login Your Account"
-                    fields={signinFields}
-                    extras={<p className="text-sm text-blue-400 cursor-pointer ml-auto">Forgot Password?</p>}
-                    buttonText="Continue"
-                />
-                <p className="text-sm">Or Continue with</p>
-                <Button text="Continue with Google" />
-                <Button text="Continue with Apple" />
-                <span className="flex gap-1 text-sm">
-                    <p>Don't have an account?</p>
-                    <Link to="/signup" className="text-blue-400 cursor-pointer">Create an account</Link>
-                </span>
+            <div className="flex justify-center items-center">
+                <div className="flex flex-col w-95 p-2.5 mt-10 items-center justify-center gap-1">
+                    <ChuksName />
+                    <Form
+                        title="Login Your Account"
+                        fields={signinFields}
+                        extras={<p className="text-sm text-blue-400 cursor-pointer ml-auto">Forgot Password?</p>}
+                        buttonText="Continue"
+                        className="mb-1"
+                    />
+                    <p className="text-xs">Or Continue with</p>
+                    <Button text="Continue with Google" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2" />
+                    <Button text="Continue with Apple" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm my-2" />
+                    <span className="flex gap-1 text-xs">
+                        <p>Don't have an account?</p>
+                        <Link to="/signup" className="text-blue-400 cursor-pointer">Create an account</Link>
+                    </span>
+                </div>
             </div>
         </section>
     )
