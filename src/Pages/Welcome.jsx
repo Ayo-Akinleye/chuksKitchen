@@ -1,4 +1,4 @@
-import welcomeImage from '../assets/welcome-image.png';
+import WelcomeImageDiv from '../Components/WelcomeImageDiv';
 import ChuksName from '../Components/ChuksName';
 import Button from '../Components/Button';
 import { Utensils, Van } from 'lucide-react';
@@ -10,13 +10,7 @@ const Welcome = () => {
     return (
         <section className='h-full grid grid-cols-1 md:grid-cols-2'>
             {/* image container */}
-            <div className='h-full'>
-                <img
-                    src={welcomeImage}
-                    alt="Welcome image"
-                    className='w-full h-full object-cover'
-                />
-            </div>
+            <WelcomeImageDiv />
 
             <div className='pl-18 pr-12 py-5 font-inter flex flex-col'>
                 <div className='flex justify-between items-center'>
