@@ -3,6 +3,7 @@ import Layout from "./layouts/Layout";
 import Welcome from "./Pages/Welcome";
 import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
+import Homepage from "./Pages/Homepage";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route index element={<Welcome />} />
           <Route path="signin" element={<Signin />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="homepage" element={<Homepage />} />
         </Route>
       </Routes>
     </BrowserRouter>

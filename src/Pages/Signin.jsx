@@ -15,7 +15,15 @@ const Signin = () => {
     return (
         <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
             {/* Image Container */}
-            <WelcomeImageDiv />
+            <WelcomeImageDiv
+                overlay
+                content={
+                    <>
+                        <h1 className="font-bold text-4xl">Chuks Kitchen</h1>
+                        <p className="w-100 text-center font-medium text-2xl">Your journey to delicious, authentic Nigerian meals starts here. Sign up or log in to order your favorites today!</p>
+                    </>
+                }
+            />
 
             {/* Sign in section */}
             <div className="flex justify-center items-center">
@@ -26,7 +34,7 @@ const Signin = () => {
                         fields={signinFields}
                         extras={<p className="text-sm text-blue-400 cursor-pointer ml-auto">Forgot Password?</p>}
                         buttonText="Continue"
-                        className="mb-1"
+                        className="mb-2"
                     />
                     <p className="text-xs">Or Continue with</p>
                     <Button text="Continue with Google" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2" />
