@@ -4,7 +4,7 @@ import ChuksName from "../Components/ChuksName";
 import { Mail, LockKeyhole, Phone } from "lucide-react"
 import Button from "../Components/Button";
 import { Link } from "react-router-dom";
-import CheckInput from "../Components/checkInput";
+import CheckInput from "../Components/CheckInput";
 import GoogleIcon from "../assets/googleLogo.png";
 import FacebookIcon from '../assets/facebookicon.png'
 
