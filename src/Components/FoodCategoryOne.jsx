@@ -4,10 +4,10 @@ import FoodImageTwo from '../assets/food2.png'
 import FoodImageThree from '../assets/food3.png'
 import FoodImageFour from '../assets/food4.png'
 
-const PopularCategory = () => {
+const FoodCategoryOne = ({ sectionTitle, className = "" }) => {
     return (
         <section className="flex flex-col bg-gray-100 py-34.25 px-12 gap-8 items-center justify-center">
-            <h1 className="font-bold text-3xl text-[#1F2937]">Popular Categories</h1>
+            <h1 className={`font-bold text-3xl text-[#1F2937] ${className}`}>{sectionTitle}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <FoodCard
                     src={FoodImageOne}
@@ -43,4 +43,4 @@ const PopularCategory = () => {
     )
 }
 
-export default PopularCategory
+export default FoodCategoryOne

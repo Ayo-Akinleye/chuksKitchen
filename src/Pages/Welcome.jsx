@@ -46,7 +46,7 @@ const Welcome = () => {
                         </span>
                     </div>
 
-                    <Button text="Start Your Order" className='bg-orange-500 text-white border-0' />
+                    <Button text="Start Your Order" className='bg-orange-500 text-white border-0' onClick={() => navigate("/signin")} />
                     <Button text="Learn More About Us" className='border-2 border-blue-400 text-blue-500' />
                 </div>
 

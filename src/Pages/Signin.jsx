@@ -4,6 +4,8 @@ import ChuksName from "../Components/ChuksName";
 import { Mail, LockKeyhole } from "lucide-react"
 import Button from "../Components/Button";
 import { Link } from "react-router-dom";
+import GoogleIcon from "../assets/googleLogo.png";
+import FacebookIcon from '../assets/facebookicon.png'
 
 
 const Signin = () => {
@@ -37,8 +39,18 @@ const Signin = () => {
                         className="mb-2"
                     />
                     <p className="text-xs">Or Continue with</p>
-                    <Button text="Continue with Google" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2" />
-                    <Button text="Continue with Apple" className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm my-2" />
+                    <Button
+                        text="Continue with Google"
+                        className="w-full font-normal! flex items-center justify-center gap-2 py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
+                        icon={GoogleIcon}
+                    />
+
+                    <Button
+                        text="Continue with Apple"
+                        className="w-full font-normal! flex items-center justify-center gap-2 py-3 bg-white border border-gray-300 text-sm my-2"
+                        icon={FacebookIcon}
+                    />
+
                     <span className="flex gap-1 text-xs">
                         <p>Don't have an account?</p>
                         <Link to="/signup" className="text-blue-400 cursor-pointer">Create an account</Link>

@@ -1,16 +1,16 @@
-# React + Vite
+# ChuksKitchen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+p.s this project is not responsive yet. Kindly preview on a desktop computer
+This website aims to solve the problem of Mr. Chuks who wants to bring his business online and get more customers.
+It is a multipage website.
 
-Currently, two official plugins are available:
+Live URl: 
+By Clicking this link, you'll be taken to the deployed web application where you can explore all features of this project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+# Stack/Tools used
+1. ReactJs
+2. Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# What you should know before preview
+- It is a work in progress, some features might not perform as expected
