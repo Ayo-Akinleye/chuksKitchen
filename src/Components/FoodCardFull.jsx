@@ -16,7 +16,7 @@ const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plu
                 <div className="w-full flex justify-between items-center mt-auto">
                     <p className="font-medium text-[16px] text-orange-500">{price}</p>
                     {plusButton && <span className="bg-orange-500 rounded-xl cursor-pointer">{plusButton}</span>}
-                    {buttonText && <Button text={buttonText} className="bg- orange-500 text-white font-medium!" />}
+                    {buttonText && <Button text={buttonText} className="bg-orange-500 text-white font-medium!" />}
                 </div>
             </div>
 

@@ -41,13 +41,13 @@ const Signin = () => {
                     <p className="text-xs">Or Continue with</p>
                     <Button
                         text="Continue with Google"
-                        className="w-full font-normal! flex items-center justify-center gap-2 py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
+                        className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
                         icon={GoogleIcon}
                     />
 
                     <Button
                         text="Continue with Apple"
-                        className="w-full font-normal! flex items-center justify-center gap-2 py-3 bg-white border border-gray-300 text-sm my-2"
+                        className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm my-2"
                         icon={FacebookIcon}
                     />
 

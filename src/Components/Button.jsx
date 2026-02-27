@@ -4,7 +4,7 @@ const Button = ({ text, type = "button", onClick, className = "", icon }) => {
         <button
             type={type}
             onClick={onClick}
-            className={`py-2 px-5 border-black rounded-lg cursor-pointer font-semibold ${className}`}
+            className={`py-2 px-5 border-black rounded-lg cursor-pointer font-semibold flex items-center justify-center gap-2 ${className}`}
         >
             {icon && <img src={icon} alt="" className="w-5 h-5" />}
             {text}

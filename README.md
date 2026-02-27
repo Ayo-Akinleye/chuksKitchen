@@ -4,7 +4,7 @@ p.s this project is not responsive yet. Kindly preview on a desktop computer
 This website aims to solve the problem of Mr. Chuks who wants to bring his business online and get more customers.
 It is a multipage website.
 
-Live URl: 
+Live URl: [deployed on Netlify](https://joy-chuks-kitchen.netlify.app/)
 By Clicking this link, you'll be taken to the deployed web application where you can explore all features of this project
 
 
