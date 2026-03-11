@@ -13,8 +13,8 @@ const Form = ({ title, fields, buttonText, onSubmit, extras, className = "" }) =
     }
 
     return (
-        <form onSubmit={onSubmit} className={`w-full flex flex-col gap-3 ${className}`}>
-            <h1 className='text-center text-2xl leading-8.5 font-medium font-inter'>{title}</h1>
+        <form onSubmit={onSubmit} className={`w-full flex flex-col justify-center gap-3 ${className}`}>
+            <h1 className='text-center text-2xl leading-8.5 font-semibold font-inter'>{title}</h1>
 
             {fields.map((field) => (
                 <FormInput

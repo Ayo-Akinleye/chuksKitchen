@@ -15,9 +15,10 @@ const Signin = () => {
     ]
 
     return (
-        <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
+        <section className='h-full grid grid-cols-1 lg:grid-cols-2 font-inter bg-gray-100'>
             {/* Image Container */}
             <WelcomeImageDiv
+                className="hidden flex-1 lg:block"
                 overlay
                 content={
                     <>
@@ -28,8 +29,8 @@ const Signin = () => {
             />
 
             {/* Sign in section */}
-            <div className="flex justify-center items-center">
-                <div className="flex flex-col w-95 p-2.5 mt-10 items-center justify-center gap-1">
+            <div className="flex flex-1 justify-center h-full items-center w-full">
+                <div className="flex flex-col w-full md:w-95 p-2.5 mt-10 items-center justify-center gap-1">
                     <ChuksName />
                     <Form
                         title="Login Your Account"
@@ -51,7 +52,7 @@ const Signin = () => {
                         icon={FacebookIcon}
                     />
 
-                    <span className="flex gap-1 text-xs">
+                    <span className="flex gap-1 text-xs mb-3">
                         <p>Don't have an account?</p>
                         <Link to="/signup" className="text-blue-400 cursor-pointer">Create an account</Link>
                     </span>

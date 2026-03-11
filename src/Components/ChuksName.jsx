@@ -1,13 +1,12 @@
 import React from 'react'
 
-const ChuksName = () => {
+const ChuksName = ({ className }) => {
     return (
-        <div>
-            <h2 className='font-island text-[#FF7A18] text-[40px]'>
+        <h2 className={`font-island text-[#FF7A18] text-[40px] ${className}`}>
             {/* 37.02px, 4xl = 36px */}
-                Chuks Kitchen
-            </h2>
-        </div>
+            Chuks Kitchen
+        </h2>
+
     )
 }
 
