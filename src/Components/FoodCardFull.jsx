@@ -2,7 +2,7 @@ import Button from "./Button"
 
 const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plusButton }) => {
     return (
-        <div className={`flex flex-col bg-white w-96 h-120 rounded-lg ${className}`}>
+        <div className={`flex flex-col bg-white w-85 h-120 rounded-lg ${className}`}>
             <img src={src} alt="Image of a plate of food" className="rounded-lg object-cover h-[50%]" />
 
             {/* details */}

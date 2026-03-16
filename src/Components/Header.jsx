@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header
-            className='h-15 w-full bg-white! flex items-center py-4.5 px-12'
+            className='h-15 w-full bg-white! flex items-center py-4.5 px-5 md:px-12'
         >
             <ChuksName className="mr-7"/>
             <nav className="hidden lg:flex w-full flex-1 items-center justify-center px-3 py-2.5 gap-30 list-none">

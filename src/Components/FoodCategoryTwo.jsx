@@ -7,7 +7,7 @@ import ChefSpecialFour from '../assets/chefSpecial4.png'
 
 const ChefSpecial = ({ sectionTitle, className= "" }) => {
     return (
-        <section className="flex flex-col bg-gray-100 py-34.25 px-12 gap-8 items-center justify-center">
+        <section className="flex flex-col bg-gray-100 py-34.25 px-5 md:px-12 gap-8 items-center justify-center">
             <h1 className={`font-bold text-3xl my-6 text-[#1F2937] text-center ${className}`}>{sectionTitle}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <FoodCardFull

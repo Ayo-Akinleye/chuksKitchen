@@ -36,9 +36,9 @@ const Homepage = () => {
                 src={AdditionalImage}
                 overlay
                 content={
-                    <div className='flex flex-col justify-center my-auto px-12 gap-6'>
-                        <h1 className='font-bold text-5xl' >Introducing Our New Menu Additions!</h1>
-                        <p className='font-semibold text-2xl w-180'>Explore exciting new dishes, crafted with the freshest ingredients and authentic Nigerian flavors. Limited time offer!</p>
+                    <div className='flex flex-col justify-center my-auto px-5 md:px-12 gap-6'>
+                        <h1 className='font-bold text-3xl md:text-5xl' >Introducing Our New Menu Additions!</h1>
+                        <p className='font-semibold text:lg lg:text-2xl lg:w-180'>Explore exciting new dishes, crafted with the freshest ingredients and authentic Nigerian flavors. Limited time offer!</p>
                         <Button text="Discover what's new" className='bg-orange-500 w-48 font-medium!' />
                     </div>
 
