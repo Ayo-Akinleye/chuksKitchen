@@ -1,16 +1,18 @@
 import ChuksName from "./ChuksName"
 import Button from "./Button"
 import { NavLink } from "react-router-dom"
+import { Menu } from 'lucide-react';
+
 
 const Header = () => {
     const linkStyle = "hover:text-orange-500";
 
     return (
         <header
-            className='h-15 w-full bg-white! flex items-center py-4.5 px-12 justify-between'
+            className='h-15 w-full bg-white! flex items-center py-4.5 px-12'
         >
-            <ChuksName />
-            <nav className="w-full flex flex-1 items-center justify-between px-3 py-2.5 list-none">
+            <ChuksName className="mr-7"/>
+            <nav className="hidden lg:flex w-full flex-1 items-center justify-center px-3 py-2.5 gap-30 list-none">
                 <NavLink to="/homepage"
                     className={({ isActive }) => isActive ? `${linkStyle} text-orange-400` : linkStyle}>
                     Home
@@ -30,9 +32,9 @@ const Header = () => {
                     className={({ isActive }) => isActive ? `${linkStyle} text-orange-400` : linkStyle}>
                     Account
                 </NavLink>
-
                 <Button text="Login" className="bg-orange-500 text-white py-1.5! ml-auto" />
             </nav>
+            <Menu className="text-orange-500 text-xl lg:hidden ml-auto" />
         </header>
     )
 }

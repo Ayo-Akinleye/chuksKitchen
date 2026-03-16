@@ -15,8 +15,8 @@ const Homepage = () => {
                 overlay
                 content={
                     <>
-                        <h1 className="font-bold text-5xl leading-15.25 mr-5">The Heart of Nigerian Home<br />Cooking</h1>
-                        <p className="font-bold text-3xl" >Handcrafted with passion, delivered with care.</p>
+                        <h1 className="font-bold text-3xl md:text-5xl md:leading-15.25 md:mr-5">The Heart of Nigerian Home Cooking</h1>
+                        <p className="lg:font-bold text-lg md:text-3xl" >Handcrafted with passion, delivered with care.</p>
                         <Button text="Discover what's new" className="bg-orange-500 text-white w-53.75 font-medium!" />
                     </>
                 }
