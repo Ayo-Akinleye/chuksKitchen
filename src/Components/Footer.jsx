@@ -43,8 +43,8 @@ const Footer = () => {
             </div>
 
             {/* Copyright info */}
-            <div className='flex px-27.5 opacity-75 h-21 items-center gap-2 justify-between'>
-                <p>© 2026 Joy-in-tech. All rights reserved.</p>
+            <div className='flex w-full px-27.5 opacity-75 h-21 items-center gap-2 justify-between'>
+                <p className="text-sm lg:text-lg">© 2026 Joy-in-tech. All rights reserved.</p>
                 <a href="#">
                     <img src={ArrowImage} alt="Scroll to top" className="w-10 cursor-pointer" />
                 </a>
