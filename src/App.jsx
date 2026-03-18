@@ -7,6 +7,7 @@ import Homepage from "./Pages/Homepage";
 import Explore from './Pages/Explore'
 import MyOrders from "./Pages/MyOrders";
 import MyAccount from './Pages/MyAccount'
+import NoPage from "./Pages/NoPage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="explore" element={<Explore />} />
           <Route path="myorders" element={<MyOrders />} />
           <Route path="myaccount" element={<MyAccount />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
