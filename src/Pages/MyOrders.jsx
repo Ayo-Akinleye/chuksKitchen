@@ -1,9 +1,9 @@
-import React from 'react'
+import Header from "../Components/Header";
 
 const MyOrders = () => {
   return (
     <div>
-      
+      <Header />
     </div>
   )
 }
