@@ -1,5 +1,5 @@
 
-const FormInput = ({ type, label, name, placeholder, icon: Icon, className = "" }) => {
+const FormInput = ({ type, label, name, placeholder, icon: Icon,onChange, className = "" }) => {
     return (
         <div className="flex flex-col gap-1 items-start">
             <label
@@ -20,6 +20,7 @@ const FormInput = ({ type, label, name, placeholder, icon: Icon, className = "" 
                     name={name}
                     id={name}
                     placeholder={placeholder}
+                    onChange={onChange}
                     className={`outline-none ${className}`}
                 />
             </div>

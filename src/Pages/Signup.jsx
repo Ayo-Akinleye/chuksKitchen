@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signUpWithEmail, signInWithGoogle } from "../services/auth";
 import WelcomeImageDiv from "../Components/WelcomeImageDiv";
 import Form from "../Components/Form";
 import ChuksName from "../Components/ChuksName";
@@ -6,16 +9,51 @@ import Button from "../Components/Button";
 import { Link } from "react-router-dom";
 import CheckInput from "../Components/CheckInput";
 import GoogleIcon from "../assets/googleLogo.png";
-import FacebookIcon from '../assets/facebookicon.png'
+import AppleIcon from '../assets/appleIcon.png';
 
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+
     const signupFields = [
         { icon: Mail, name: "email", type: "email", label: "Email", placeholder: "name@gmail.com" },
         { icon: Phone, name: "phonenumber", type: "text", label: "Phone number", placeholder: "8123340690" },
         { icon: LockKeyhole, name: "password", type: "password", label: "Password", placeholder: "********" },
         { icon: LockKeyhole, name: "confirmpassword", type: "password", label: "Confirm password", placeholder: "********" }
-    ]
+    ];
+
+    const handleSignup = async (formData) => {
+        setError("");
+
+        if (formData.password !== formData.confirmpassword) {
+            setError("Passwords do not match");
+            return;
+        }
+
+        setLoading(true);
+        try {
+            await signUpWithEmail(formData.email, formData.password, formData.phonenumber);
+            navigate("/"); // redirect after signup — change "/" to wherever you want
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogle = async () => {
+        setLoading(true);
+        try {
+            await signInWithGoogle();
+            navigate("/");
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
@@ -37,6 +75,7 @@ const Signup = () => {
                     <Form
                         title="Create Your Account"
                         fields={signupFields}
+                        onSubmit={handleSignup}
                         extras={
                             <>
                                 <CheckInput />
@@ -47,21 +86,24 @@ const Signup = () => {
                                 </p>
                             </>
                         }
-                        buttonText="Continue"
+                        buttonText={loading ? "Please wait..." : "Continue"}
                         className="mb-2"
                     />
+                    {error && <p classname="text-red-500 text-xs text-center">{error}</p>}
                     <p className="text-xs">Or Continue with</p>
                     <Button
                         text="Continue with Google"
                         className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
                         icon={GoogleIcon}
+                        onClick={handleGoogle}
                     />
-                    <Button
+
+                    {/* <Button
                         text="Continue with Apple"
                         className="w-full font-normal!py-3 bg-white border border-gray-300 text-sm my-2"
-                        icon={FacebookIcon}
+                        icon={AppleIcon}
+                    /> */}
 
-                    />
                     <span className="flex gap-1 text-xs">
                         <p>Already have an account?</p>
                         <Link to="/signin" className="text-blue-400 cursor-pointer">Sign in</Link>

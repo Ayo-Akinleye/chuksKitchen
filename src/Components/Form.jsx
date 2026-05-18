@@ -1,19 +1,26 @@
+import { useState } from 'react'
 import FormInput from './FormInput';
 import Button from './Button';
-import { useNavigate } from 'react-router-dom'
 
 
 const Form = ({ title, fields, buttonText, onSubmit, extras, className = "" }) => {
 
-    const Navigate = useNavigate();
+    const [formData, setFormData] = useState({})
 
-    const handleSubmit = () => {
+    const handleChange = (e) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
 
-        Navigate("/homepage")
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(formData);
     }
 
     return (
-        <form onSubmit={onSubmit} className={`w-full flex flex-col justify-center gap-3 ${className}`}>
+        <form
+            onSubmit={handleSubmit}
+            className={`w-full flex flex-col justify-center gap-3 ${className}`}
+        >
             <h1 className='text-center text-2xl leading-8.5 font-semibold font-inter'>{title}</h1>
 
             {fields.map((field) => (
@@ -25,6 +32,7 @@ const Form = ({ title, fields, buttonText, onSubmit, extras, className = "" }) =
                     name={field.name}
                     icon={field.icon}
                     className='focus-bg-white'
+                    onChange={handleChange}
                 />
             ))}
 
@@ -34,9 +42,8 @@ const Form = ({ title, fields, buttonText, onSubmit, extras, className = "" }) =
 
             <Button
                 text={buttonText}
-                type='button'
+                type='submit'
                 className='w-full py-3 bg-orange-500 text-white font-normal!'
-                onClick={handleSubmit}
             />
         </form>
     )
