@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWIthEmail, signInWithGoogle } from '../services/auth';
+import { signInWithEmail, signInWithGoogle } from '../services/auth';
 import WelcomeImageDiv from "../Components/WelcomeImageDiv";
 import Form from "../Components/Form";
 import ChuksName from "../Components/ChuksName";
@@ -23,9 +23,11 @@ const Signin = () => {
 
     const handleSignin = async (formData) => {
         setError("");
+
         setLoading(true);
+
         try {
-            await signInWIthEmail(formData.email, formData.password);
+            await signInWithEmail(formData.email, formData.password);
             navigate("/");
         } catch (err) {
             setError(err.message)
@@ -68,24 +70,26 @@ const Signin = () => {
                         title="Login Your Account"
                         fields={signinFields}
                         onSubmit={handleSignin}
-                        extras={<p className="text-sm text-blue-400 cursor-pointer ml-auto hover:underline">Forgot Password?</p>}
+                        extras={
+                            <p className="text-sm text-blue-400 cursor-pointer ml-auto hover:underline">
+                                Forgot Password?
+                            </p>
+                        }
                         buttonText={loading ? "Please wait..." : "Continue"}
                         className="mb-2"
                     />
-                    {error && <p classname="text-red-500 text-xs text-center">{error}</p>}
+
+                    {/* CONTENT OUTSIDE THE FORM */}
+                    {error && <p className="text-red-500 text-xs text-center">{error}</p>}
+
                     <p className="text-xs">Or Continue with</p>
+
                     <Button
                         text="Continue with Google"
                         className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
                         icon={GoogleIcon}
                         onClick={handleGoogle}
                     />
-
-                    {/* <Button
-                        text="Continue with Apple"
-                        className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm my-2"
-                        icon={AppleIcon}
-                    /> */}
 
                     <span className="flex gap-1 text-xs mb-3">
                         <p>Don't have an account?</p>

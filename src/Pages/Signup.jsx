@@ -35,7 +35,7 @@ const Signup = () => {
         setLoading(true);
         try {
             await signUpWithEmail(formData.email, formData.password, formData.phonenumber);
-            navigate("/"); // redirect after signup — change "/" to wherever you want
+            navigate("/homepage");
         } catch (err) {
             setError(err.message);
         } finally {
@@ -56,9 +56,10 @@ const Signup = () => {
     };
 
     return (
-        <section className='h-full grid grid-cols-1 md:grid-cols-2 font-inter bg-gray-100'>
+        <section className='grid grid-cols-1 lg:grid-cols-2 font-inter bg-gray-100'>
             {/* Image Container */}
             <WelcomeImageDiv
+                className="hidden flex-1 lg:block"
                 overlay
                 content={
                     <>
@@ -69,8 +70,8 @@ const Signup = () => {
             />
 
             {/* Sign up section */}
-            <div className="flex justify-center items-center">
-                <div className="flex flex-col w-95 p-2.5 mt-10 items-center justify-center gap-1">
+            <div className="flex flex-1 justify-center items-center h-full w-full bg-red-500">
+                <div className="flex flex-col w-full md:w-95 p-2.5 mt-10 items-center justify-center gap-1">
                     <ChuksName />
                     <Form
                         title="Create Your Account"
@@ -89,8 +90,12 @@ const Signup = () => {
                         buttonText={loading ? "Please wait..." : "Continue"}
                         className="mb-2"
                     />
-                    {error && <p classname="text-red-500 text-xs text-center">{error}</p>}
+
+                    {/* CONTENT OUTSIDE THE FORM */}
+                    {error && <p className="text-red-500 text-xs text-center">{error}</p>}
+
                     <p className="text-xs">Or Continue with</p>
+
                     <Button
                         text="Continue with Google"
                         className="w-full font-normal! py-3 bg-white border border-gray-300 text-sm mt-3 mb-2"
@@ -98,15 +103,9 @@ const Signup = () => {
                         onClick={handleGoogle}
                     />
 
-                    {/* <Button
-                        text="Continue with Apple"
-                        className="w-full font-normal!py-3 bg-white border border-gray-300 text-sm my-2"
-                        icon={AppleIcon}
-                    /> */}
-
                     <span className="flex gap-1 text-xs">
                         <p>Already have an account?</p>
-                        <Link to="/signin" className="text-blue-400 cursor-pointer">Sign in</Link>
+                        <Link to="/signin" className="text-blue-400 cursor-pointer hover:underline">Sign in</Link>
                     </span>
                 </div>
             </div>

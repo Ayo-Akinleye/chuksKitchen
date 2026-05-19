@@ -1,3 +1,4 @@
+// Auth.js contains all firebase functions
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,7 +8,7 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db, googleProvider } from "../firebase";
 
-// Sign up with email & password
+// SIGN UP:  with email & password
 export const signUpWithEmail = async (email, password, phone) => {
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
   const user = userCredential.user;
@@ -22,13 +23,13 @@ export const signUpWithEmail = async (email, password, phone) => {
   return user;
 };
 
-// Sign in with email & password
+// SIGN IN with email & password
 export const signInWithEmail = async (email, password) => {
   const userCredential = await signInWithEmailAndPassword(auth, email, password);
   return userCredential.user;
 };
 
-// Sign in with Google
+// SIGN IN with Google
 export const signInWithGoogle = async () => {
   const userCredential = await signInWithPopup(auth, googleProvider);
   const user = userCredential.user;
@@ -43,7 +44,7 @@ export const signInWithGoogle = async () => {
   return user;
 };
 
-// Sign out
+// SIGN OUT
 export const logOut = async () => {
   await signOut(auth);
 };
