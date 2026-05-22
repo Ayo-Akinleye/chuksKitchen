@@ -1,9 +1,9 @@
 import ChuksName from "./ChuksName"
 import ArrowImage from "../assets/arrow-icon.png"
 
-const Footer = () => {
+const Footer = ({ className }) => {
     return (
-        <div className='flex flex-col h-auto bg-[#724330] text-white pt-10 pb-7 gap-1 text-center md:text-start'>
+        <div className={`flex flex-col h-auto bg-[#724330] text-white pt-10 pb-7 gap-1 text-center md:text-start ${className}`}>
 
             {/* main footer info */}
             <div className='w-full h-auto flex flex-col md:flex-row px-27.5 justify-between'>
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright info */}
-            <div className='flex w-full px-27.5 opacity-75 h-21 items-center gap-2 justify-between'>
+            <div className='flex w-full px-27.5 opacity-75 items-center gap-2 justify-between py-4'>
                 <p className="text-sm lg:text-lg">© 2026 Joy-in-tech. All rights reserved.</p>
                 <a href="#">
                     <img src={ArrowImage} alt="Scroll to top" className="w-10 cursor-pointer" />

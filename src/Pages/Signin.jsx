@@ -49,7 +49,7 @@ const Signin = () => {
     };
 
     return (
-        <section className='h-full grid grid-cols-1 lg:grid-cols-2 font-inter bg-gray-100'>
+        <section className='grid grid-cols-1 lg:grid-cols-2 font-inter bg-gray-100 h-full'>
             {/* Image Container */}
             <WelcomeImageDiv
                 className="hidden flex-1 lg:block"
@@ -63,7 +63,7 @@ const Signin = () => {
             />
 
             {/* Sign in section */}
-            <div className="flex flex-1 justify-center h-full items-center w-full">
+            <div className="flex flex-1 justify-center h-full items-center w-full px-2 py-4">
                 <div className="flex flex-col w-full md:w-95 p-2.5 mt-10 items-center justify-center gap-1">
                     <ChuksName />
                     <Form
