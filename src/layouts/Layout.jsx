@@ -3,8 +3,8 @@ import Footer from "../Components/Footer";
 
 const Layout = () => {
     return (
-        <div className="flex flex-col min-h-screen">
-            <main className="flex-1">
+        <div className="flex flex-col">
+            <main className="flex-1 min-h-screen">
                 <Outlet />
             </main>
             <Footer />
