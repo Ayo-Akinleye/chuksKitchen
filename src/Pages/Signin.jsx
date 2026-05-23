@@ -28,7 +28,7 @@ const Signin = () => {
 
         try {
             await signInWithEmail(formData.email, formData.password);
-            navigate("/");
+            navigate("/homepage");
         } catch (err) {
             setError(err.message)
         } finally {
@@ -40,7 +40,7 @@ const Signin = () => {
         setLoading(true);
         try {
             await signInWithGoogle();
-            navigate("/");
+            navigate("/homepage");
         } catch (err) {
             setError(err.message);
         } finally {

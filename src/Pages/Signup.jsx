@@ -47,7 +47,7 @@ const Signup = () => {
         setLoading(true);
         try {
             await signInWithGoogle();
-            navigate("/");
+            navigate("/homepage");
         } catch (err) {
             setError(err.message);
         } finally {

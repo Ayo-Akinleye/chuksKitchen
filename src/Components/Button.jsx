@@ -1,5 +1,5 @@
 
-const Button = ({ text, type = "button", onClick, className = "", icon }) => {
+const Button = ({ text, type, onClick, className = "", icon }) => {
     return (
         <button
             type={type}
