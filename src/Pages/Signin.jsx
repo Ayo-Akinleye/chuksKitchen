@@ -64,7 +64,7 @@ const Signin = () => {
 
             {/* Sign in section */}
             <div className="flex flex-1 justify-center h-full items-center w-full px-2 py-4">
-                <div className="flex flex-col w-full md:w-95 p-2.5 mt-10 items-center justify-center gap-1">
+                <div className="flex flex-col w-full md:w-95 items-center justify-center gap-1">
                     <ChuksName />
                     <Form
                         title="Login Your Account"

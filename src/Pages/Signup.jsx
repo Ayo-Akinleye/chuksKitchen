@@ -71,7 +71,7 @@ const Signup = () => {
 
             {/* Sign up section */}
             <div className="flex flex-1 justify-center items-center h-full w-full px-2 py-4">
-                <div className="flex flex-col w-full h-full md:w-95 p-2.5 mt-10 items-center justify-center gap-1">
+                <div className="flex flex-col w-full h-full md:w-95 items-center justify-center gap-1">
                     <ChuksName />
                     <Form
                         title="Create Your Account"
