@@ -4,7 +4,7 @@ import { signUpWithEmail, signInWithGoogle } from "../services/auth";
 import WelcomeImageDiv from "../Components/WelcomeImageDiv";
 import Form from "../Components/Form";
 import ChuksName from "../Components/ChuksName";
-import { Mail, LockKeyhole, Phone } from "lucide-react"
+import { Mail, LockKeyhole, Phone, User } from "lucide-react"
 import Button from "../Components/Button";
 import { Link } from "react-router-dom";
 import CheckInput from "../Components/CheckInput";
@@ -16,8 +16,10 @@ const Signup = () => {
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("")
 
     const signupFields = [
+        { icon: User, name: "fullname", type: "text", label: "Full name", placeholder: "Ada Okonkwo"},
         { icon: Mail, name: "email", type: "email", label: "Email", placeholder: "name@gmail.com" },
         { icon: Phone, name: "phonenumber", type: "text", label: "Phone number", placeholder: "8123340690" },
         { icon: LockKeyhole, name: "password", type: "password", label: "Password", placeholder: "********" },
@@ -34,8 +36,9 @@ const Signup = () => {
 
         setLoading(true);
         try {
-            await signUpWithEmail(formData.email, formData.password, formData.phonenumber);
-            navigate("/homepage");
+            await signUpWithEmail(formData.email, formData.password, formData.phonenumber, formData.fullname);
+            setMessage("Account created! Please check your email to verify your account before signing in.")
+            // navigate("/homepage");
         } catch (err) {
             setError(err.message);
         } finally {
@@ -92,6 +95,7 @@ const Signup = () => {
                     />
 
                     {/* CONTENT OUTSIDE THE FORM */}
+                    {message && <p className="text-green-600 text-xs text-center">{message}</p>}
                     {error && <p className="text-red-500 text-xs text-center">{error}</p>}
 
                     <p className="text-xs">Or Continue with</p>

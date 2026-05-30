@@ -23,6 +23,9 @@ const App = () => {
           <Route path="myaccount" element={<MyAccount />} />
           <Route path="*" element={<NoPage />} />
         </Route>
+        {/* <Route path="/auth">
+
+        </Route> */}
       </Routes>
     </BrowserRouter>
   )

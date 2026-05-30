@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmail, signInWithGoogle } from '../services/auth';
+import { logOut, signInWithEmail, signInWithGoogle } from '../services/auth';
 import WelcomeImageDiv from "../Components/WelcomeImageDiv";
 import Form from "../Components/Form";
 import ChuksName from "../Components/ChuksName";
@@ -27,7 +27,13 @@ const Signin = () => {
         setLoading(true);
 
         try {
-            await signInWithEmail(formData.email, formData.password);
+            const user = await signInWithEmail(formData.email, formData.password);
+
+            if (!user.emailVerified) {
+                setError("Please verify your email before signing in. Check your inbox.");
+                await logOut();
+                return;
+            }
             navigate("/homepage");
         } catch (err) {
             setError(err.message)
