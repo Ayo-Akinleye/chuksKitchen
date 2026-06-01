@@ -1,23 +1,28 @@
-import Header from '../Components/Header'
 import HeroSection from '../Components/HeroSection'
 import Button from '../Components/Button'
 import FoodCategoryOne from '../Components/FoodCategoryOne'
 import FoodCategoryTwo from '../Components/FoodCategoryTwo'
 import AdditionalSection from '../Components/AdditionalSection'
 import AdditionalImage from '../assets/chefSpecial2.png'
+import { useNavigate } from 'react-router-dom'
 
 
 const Homepage = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="">
-            <Header />
             <HeroSection
                 overlay
                 content={
                     <>
                         <h1 className="font-bold text-3xl md:text-5xl md:leading-15.25 md:mr-5">The Heart of Nigerian Home Cooking</h1>
                         <p className="lg:font-bold text-lg md:text-3xl" >Handcrafted with passion, delivered with care.</p>
-                        <Button text="Discover what's new" className="bg-orange-500 text-white w-53.75 font-medium!" />
+                        <Button
+                            text="Discover what's new"
+                            onClick={() => navigate('/explore')}
+                            className="bg-orange-500 text-white w-53.75 font-medium!"
+                        />
                     </>
                 }
             />

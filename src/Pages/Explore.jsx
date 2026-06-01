@@ -1,4 +1,3 @@
-import Header from "../Components/Header"
 import AdditionalSection from "../Components/AdditionalSection"
 import AdditionalImage from '../assets/chefSpecial3.png'
 import mobileExploreImg from '../assets/hero-image.png'
@@ -10,7 +9,6 @@ import FoodCategoryFive from "../Components/FoodCategoryFive"
 const Explore = () => {
   return (
     <div className="bg-gray-100">
-      <Header />
       <AdditionalSection
         src={AdditionalImage}
         mobileSrc={mobileExploreImg}
@@ -37,7 +35,7 @@ const Explore = () => {
       </div>
 
       <div id="Swallow">
-        <FoodCategoryFive sectionTitle="Swallow & Soups"/>
+        <FoodCategoryFive sectionTitle="Swallow & Soups" />
       </div>
 
     </div>

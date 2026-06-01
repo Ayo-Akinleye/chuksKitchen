@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 
-const Layout = () => {
+const AuthLayout = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <main className="flex flex-1 flex-col">
                 <Outlet />
             </main>
-            <Footer className="flex flex-1" />
+            <Footer/>
         </div>
     )
 }
 
-export default Layout
+export default AuthLayout

@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <header
-            className='relative h-15 w-full bg-white! flex items-center py-4.5 px-5 md:px-12 shadow-md'
+            className='fixed h-15 w-full bg-white! flex items-center py-4.5 px-5 md:px-12 shadow-md z-50'
         >
             <ChuksName className="mr-7" />
 
@@ -71,7 +71,7 @@ const Header = () => {
                                 <img
                                     src={user.photoURL || `https://api.dicebear.com/10.x/initials/svg?seed=${user.displayName || user.email}`}
                                     alt="profile"
-                                    className="w-9 h-9 rounded-full border-2 border-orange-400 cursor-pointer hover:opacity-90"
+                                    className="w-9 h-9 rounded-full border-2 border-orange-400 cursor-pointer hover:opacity-80"
                                 />
                             </button>
 
@@ -91,6 +91,7 @@ const Header = () => {
                                         </div>
                                     </div>
 
+                                    {/* horizontal rule */}
                                     <hr className="border-gray-100" />
 
                                     {/* Profile link */}
@@ -120,7 +121,9 @@ const Header = () => {
                             onClick={() => navigate("/signin")}
                         />
                     )}
-                </div>            </nav>
+                </div>
+
+            </nav>
 
             {/* menu button and close button */}
             <button

@@ -1,4 +1,3 @@
-import Header from "../Components/Header";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
 
@@ -6,7 +5,6 @@ const MyOrders = () => {
   const navigate = useNavigate()
   return (
     <div>
-      <Header />
       <section className="min-h-screen flex items-center justify-center">
         <div>
           <h2>My Cart</h2>
