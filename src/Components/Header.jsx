@@ -12,6 +12,7 @@ const Header = () => {
     const [profileOpen, setProfileOpen] = useState(false);
     const profileRef = useRef(null);
     const { user } = useAuth();
+
     const navigate = useNavigate();
 
     const linkStyle = "hover:text-orange-500";
@@ -71,6 +72,7 @@ const Header = () => {
                                 <img
                                     src={user.photoURL || `https://api.dicebear.com/10.x/initials/svg?seed=${user.displayName || user.email}`}
                                     alt="profile"
+                                    referrerPolicy="no-referrer"
                                     className="w-9 h-9 rounded-full border-2 border-orange-400 cursor-pointer hover:opacity-80"
                                 />
                             </button>
@@ -83,6 +85,7 @@ const Header = () => {
                                         <img
                                             src={user.photoURL || `https://api.dicebear.com/10.x/initials/svg?seed=${user.displayName || user.email}`}
                                             alt="profile"
+                                            referrerPolicy="no-referrer"
                                             className="w-12 h-12 rounded-full border-2 border-orange-400"
                                         />
                                         <div className="flex flex-col">
@@ -148,6 +151,7 @@ const Header = () => {
                             <img
                                 src={user.photoURL || `https://api.dicebear.com/10.x/initials/svg?seed=${user.displayName || user.email}`}
                                 alt="profile"
+                                referrerPolicy="no-referrer"
                                 className="w-9 h-9 rounded-full border-2 border-orange-400"
                             />
                             <div className="flex flex-col flex-1">

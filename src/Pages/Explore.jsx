@@ -2,9 +2,11 @@ import AdditionalSection from "../Components/AdditionalSection"
 import AdditionalImage from '../assets/chefSpecial3.png'
 import mobileExploreImg from '../assets/hero-image.png'
 import MenuCategory from "../Components/MenuCategory"
-import FoodCategoryThree from '../Components/FoodCategoryThree'
-import FoodCategoryFour from "../Components/FoodCategoryFour"
-import FoodCategoryFive from "../Components/FoodCategoryFive"
+import FoodCategory from "../Components/FoodCategory"
+// import FoodCategoryThree from '../Components/FoodCategoryThree'
+// import FoodCategoryFour from "../Components/FoodCategoryFour"
+// import FoodCategoryFive from "../Components/FoodCategoryFive"
+
 
 const Explore = () => {
   return (
@@ -24,6 +26,18 @@ const Explore = () => {
       <MenuCategory />
 
       <div id="Popular">
+        <FoodCategory sectionTitle="Popular" category="GRILLS & BBQ" />
+      </div>
+
+      <div id="Jollof">
+        <FoodCategory sectionTitle="Jollof Rice & Entrees" category="JOLLOF DELIGHTS" />
+      </div>
+
+      <div id="Swallow">
+        <FoodCategory sectionTitle="Swallow & Soups" category="SWALLOW & SOUPS" />
+      </div>
+
+      {/* <div id="Popular">
         <FoodCategoryThree
           sectionTitle="Popular" />
       </div>
@@ -36,7 +50,7 @@ const Explore = () => {
 
       <div id="Swallow">
         <FoodCategoryFive sectionTitle="Swallow & Soups" />
-      </div>
+      </div> */}
 
     </div>
   )

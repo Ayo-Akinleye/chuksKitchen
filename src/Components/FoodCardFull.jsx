@@ -1,6 +1,6 @@
 import Button from "./Button"
 
-const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plusButton }) => {
+const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plusButton, onAdd }) => {
     return (
         <div className={`flex flex-col bg-white max-w-85 w-full h-120 rounded-lg ${className}`}>
             <img src={src} alt="Image of a plate of food" className="rounded-lg object-cover h-[50%]" />
@@ -15,7 +15,14 @@ const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plu
                 {/* Price and button div */}
                 <div className="w-full flex justify-between items-center mt-auto">
                     <p className="font-medium text-[16px] text-orange-500">{price}</p>
-                    {plusButton && <span className="bg-orange-500 rounded-xl cursor-pointer">{plusButton}</span>}
+                    {plusButton &&
+                        <span
+                            className="bg-orange-500 rounded-xl cursor-pointer"
+                            onClick={onAdd}
+                        >
+                            {plusButton}
+                        </span>
+                    }
                     {buttonText && <Button text={buttonText} className="bg-orange-500 text-white font-medium!" />}
                 </div>
             </div>
