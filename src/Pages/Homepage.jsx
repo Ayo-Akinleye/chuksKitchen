@@ -5,7 +5,7 @@ import FoodCategoryTwo from '../Components/FoodCategoryTwo'
 import AdditionalSection from '../Components/AdditionalSection'
 import AdditionalImage from '../assets/chefSpecial2.png'
 import { useNavigate } from 'react-router-dom'
-import { getMealById } from '../services/meals'
+// import { getMealById } from '../services/meals'
 
 
 const Homepage = () => {
