@@ -1,5 +1,5 @@
 import AdditionalSection from "../Components/AdditionalSection"
-import AdditionalImage from '../assets/chefSpecial3.png'
+import AdditionalImage from '../assets/jollof-2.png'
 import mobileExploreImg from '../assets/hero-image.png'
 import MenuCategory from "../Components/MenuCategory"
 import FoodCategory from "../Components/FoodCategory"

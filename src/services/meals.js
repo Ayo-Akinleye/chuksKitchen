@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc, documentId } from "firebase/firestore";
 import { db } from "../firebase";
 
 // Get all available meals
@@ -25,4 +25,12 @@ export const getMealById = async (mealId) => {
         return { id: snapshot.id, ...snapshot.data() };
     }
     return null;
+};
+
+// Get specific meals by their IDs
+export const getMealsByIds = async (ids) => {
+    const mealsRef = collection(db, "meals");
+    const q = query(mealsRef, where(documentId(), "in", ids));
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 };

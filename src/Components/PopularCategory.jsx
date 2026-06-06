@@ -1,10 +1,10 @@
 import FoodCard from "./FoodCard";
-import FoodImageOne from '../assets/food1.png'
-import FoodImageTwo from '../assets/food2.png'
-import FoodImageThree from '../assets/food3.png'
-import FoodImageFour from '../assets/food4.png'
+import FoodImageOne from '../assets/jollof-1.png'
+import FoodImageTwo from '../assets/swallow-6.png'
+import FoodImageThree from '../assets/grill-1.png'
+import FoodImageFour from '../assets/sweet-treat-1.png'
 
-const FoodCategoryOne = ({ sectionTitle, className = "" }) => {
+const PopularCategory = ({ sectionTitle, className = "" }) => {
     return (
         <section className="flex flex-col bg-gray-100 py-34.25 px-5 md:px-12 gap-8 items-center justify-center">
             <h1 className={`font-bold text-3xl text-[#1F2937] ${className}`}>{sectionTitle}</h1>
@@ -29,18 +29,9 @@ const FoodCategoryOne = ({ sectionTitle, className = "" }) => {
                     desc="Sweet Treats"
                 />
 
-                <FoodCard
-                    src={FoodImageTwo}
-                    desc="Jollof Delights"
-                />
-
-                <FoodCard
-                    src={FoodImageThree}
-                    desc="Jollof Delights"
-                />
             </div>
         </section>
     )
 }
 
-export default FoodCategoryOne
+export default PopularCategory

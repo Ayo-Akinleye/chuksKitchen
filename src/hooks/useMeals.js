@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getMeals, getMealsByCategory } from "../services/meals";
+import { getMeals, getMealsByCategory, getMealsByIds } from "../services/meals";
 
-const useMeals = (category = null) => {
+const useMeals = (category = null, ids = null) => {
     const [meals, setMeals] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -9,7 +9,14 @@ const useMeals = (category = null) => {
     useEffect(() => {
         const fetchMeals = async () => {
             try {
-                const data = category ? await getMealsByCategory(category) : await getMeals();
+                let data;
+                if (ids) {
+                    data = await getMealsByIds(ids);
+                } else if (category) {
+                    data = await getMealsByCategory(category);
+                } else {
+                    data = await getMeals();
+                }
                 console.log("meals fetched:", data);
                 setMeals(data);
             } catch (err) {
@@ -21,7 +28,7 @@ const useMeals = (category = null) => {
         };
 
         fetchMeals();
-    }, [category]);
+    }, [category, ids]);
 
     return { meals, loading, error };
 };

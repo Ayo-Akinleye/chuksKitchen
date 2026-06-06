@@ -1,5 +1,5 @@
 import desktopWelcomeImage from "../assets/welcome-image.png";
-import mobileWelcomeImage from '../assets/food1.png'
+import mobileWelcomeImage from '../assets/jollof-1.png'
 
 const WelcomeImageDiv = ({ className, overlay = false, content }) => {
     return (

@@ -1,11 +1,11 @@
 import HeroSection from '../Components/HeroSection'
 import Button from '../Components/Button'
-import FoodCategoryOne from '../Components/FoodCategoryOne'
-import FoodCategoryTwo from '../Components/FoodCategoryTwo'
+import PopularCategory from '../Components/PopularCategory'
 import AdditionalSection from '../Components/AdditionalSection'
-import AdditionalImage from '../assets/chefSpecial2.png'
+import AdditionalImage from '../assets/jollof-2.png'
 import { useNavigate } from 'react-router-dom'
-// import { getMealById } from '../services/meals'
+import FoodCategory from '../Components/FoodCategory'
+import FoodCardFull from '../Components/FoodCardFull'
 
 
 const Homepage = () => {
@@ -29,13 +29,15 @@ const Homepage = () => {
             />
 
             {/* second section */}
-            <FoodCategoryOne
+            <PopularCategory
                 sectionTitle="Popular Categories"
             />
 
-            {/* third section */}
-            <FoodCategoryTwo
+            {/* 3rd section */}
+            <FoodCategory
                 sectionTitle="Chef's Special"
+                ids={["jollof-rice-and-smoked-chicken", "tilapia-pepper-soup", "egusi-soup-and-pounded-yam"]}
+            // display="minimal"
             />
 
             {/* last section */}
