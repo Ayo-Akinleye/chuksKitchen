@@ -12,7 +12,7 @@ const Homepage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="">
+        <div className="bg-gray-100">
             <HeroSection
                 overlay
                 content={

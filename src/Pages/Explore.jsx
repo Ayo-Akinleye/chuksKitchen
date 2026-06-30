@@ -3,9 +3,7 @@ import AdditionalImage from '../assets/jollof-2.png'
 import mobileExploreImg from '../assets/hero-image.png'
 import MenuCategory from "../Components/MenuCategory"
 import FoodCategory from "../Components/FoodCategory"
-// import FoodCategoryThree from '../Components/FoodCategoryThree'
-// import FoodCategoryFour from "../Components/FoodCategoryFour"
-// import FoodCategoryFive from "../Components/FoodCategoryFive"
+
 
 
 const Explore = () => {
@@ -26,7 +24,7 @@ const Explore = () => {
       <MenuCategory />
 
       <div id="Popular">
-        <FoodCategory sectionTitle="Popular" category="GRILLS & BBQ" />
+        <FoodCategory sectionTitle="Popular" category="GRILLS & BBQ"/>
       </div>
 
       <div id="Jollof">
@@ -36,21 +34,6 @@ const Explore = () => {
       <div id="Swallow">
         <FoodCategory sectionTitle="Swallow & Soups" category="SWALLOW & SOUPS" />
       </div>
-
-      {/* <div id="Popular">
-        <FoodCategoryThree
-          sectionTitle="Popular" />
-      </div>
-
-      <div id="Jollof">
-        <FoodCategoryFour
-          sectionTitle="Jollof Rice & Entrees"
-        />
-      </div>
-
-      <div id="Swallow">
-        <FoodCategoryFive sectionTitle="Swallow & Soups" />
-      </div> */}
 
     </div>
   )

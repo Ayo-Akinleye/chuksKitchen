@@ -2,7 +2,7 @@ import Button from "./Button"
 
 const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plusButton, onAdd }) => {
     return (
-        <div className={`flex flex-col bg-white max-w-85 w-full h-120 rounded-lg ${className}`}>
+        <div className={`flex flex-col bg-white max-w-85 w-full rounded-lg items-center ${className}`}>
             {src && (
                 <img src={src} alt={title || "Food image"} className="rounded-lg object-cover h-[50%] w-full" />
             )}
@@ -11,10 +11,10 @@ const FoodCardFull = ({ className = "", src, title, desc, price, buttonText, plu
             {/* details */}
             <div className="flex flex-col p-4 gap-1 items-start justify-between flex-1">
                 {/* food name */}
-                {title && <h1 className={`font-semibold text-2xl text-[#1F2937]${className}`}>{title}</h1>}
-                
+                {title && <h1 className='font-semibold text-2xl text-[#1F2937]$'>{title}</h1>}
+
                 {/* food description */}
-                {desc && <p className={`font-medium text-[16px] mb-8 text-[#1F2937]${className}`}>{desc}</p>}
+                {desc && <p className='font-medium text-[16px] mb-8 text-[#1F2937]'>{desc}</p>}
 
                 {(price || plusButton || buttonText) && (
                     <div className="w-full flex justify-between items-center mt-auto">
