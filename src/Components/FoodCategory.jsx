@@ -1,5 +1,6 @@
+import { useState } from "react";
 import mealImages from "../data/mealImages";
-import { Plus } from "lucide-react";
+import { Plus, Check } from "lucide-react";
 import FoodCardFull from "./FoodCardFull";
 import useMeals from "../hooks/useMeals";
 import useCart from "../hooks/useCart";
@@ -7,6 +8,12 @@ import useCart from "../hooks/useCart";
 const FoodCategory = ({ sectionTitle, category, ids, display = "full", className = " " }) => {
     const { meals, loading } = useMeals(category, ids);
     const { addToCart } = useCart();
+    const [cartIds, setCartIds] = useState([]);
+
+    const handleAdd = (meal) => {
+        addToCart(meal);
+        setCartIds(prev => [...prev, meal.id]);
+    };
 
     if (loading) return <p className="px-12 py-4 text-gray-400">Loading {sectionTitle}...</p>;
 
@@ -23,12 +30,11 @@ const FoodCategory = ({ sectionTitle, category, ids, display = "full", className
                             desc={display === 'full' ? meal.description : undefined}
                             price={display === 'full' ? `₦${(meal.price || 0).toLocaleString()}` : undefined}
                             plusButton={display === 'full' ? <Plus className="text-white" /> : undefined}
-                            onAdd={() => addToCart(meal)}
-
+                            checkIcon={display === 'full' ? <Check className="text-white" /> : undefined}
+                            isAdded={cartIds.includes(meal.id)}
+                            onAdd={() => handleAdd(meal)}
                         />
-
                     )
-
                 })}
             </div>
         </section>
